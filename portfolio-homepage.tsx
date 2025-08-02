@@ -272,6 +272,15 @@ export default function PortfolioHomepage() {
                   <Mail className="w-5 h-5 ml-2" />
                 </Button>
               </Link>
+              <Link href="/user-profile" scroll={true}>
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0 px-8 py-3"
+                >
+                  View My Profile
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
             </div>
 
             {/* Social Links */}
