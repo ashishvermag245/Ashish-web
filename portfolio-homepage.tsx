@@ -164,10 +164,17 @@ export default function PortfolioHomepage() {
                 <a href="#contact" className="text-white/80 hover:text-white transition-colors">
                   Contact
                 </a>
+                <a
+                href="/AshishUpdateResume.pdf"
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0">
                   <Download className="w-4 h-4 mr-2" />
                   Resume
                 </Button>
+                </a>
               </div>
 
               {/* Mobile Menu Button */}
@@ -200,10 +207,17 @@ export default function PortfolioHomepage() {
                   <a href="#contact" className="text-white/80 hover:text-white transition-colors">
                     Contact
                   </a>
+                  <a
+                href="/AshishUpdateResume.pdf"
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                   <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0 w-full">
                     <Download className="w-4 h-4 mr-2" />
                     Resume
                   </Button>
+                  </a>
                 </div>
               </div>
             )}
@@ -335,11 +349,17 @@ export default function PortfolioHomepage() {
                   ))}
                 </div>
               </div>
-
+              <a
+                href="/AshishUpdateResume.pdf"
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+              >
               <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0">
                 Download Resume
                 <Download className="w-4 h-4 ml-2" />
               </Button>
+              </a>
             </div>
 
             <div className="relative">
@@ -394,8 +414,8 @@ export default function PortfolioHomepage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
+<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.slice(0,3).map((project, index) => (
               <Card
                 key={index}
                 className="backdrop-blur-md bg-white/10 border-white/20 hover:bg-white/20 transition-all duration-300 group overflow-hidden"
@@ -431,7 +451,7 @@ export default function PortfolioHomepage() {
                         Code
                       </Button>
                     </Link>
-                    <Link href={project.live}
+                    <Link href={project.live} target="_blank"
                       className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0 flex rounded-md px-2 py-1.5 w-40 items-center justify-center"
                     >
                       <ExternalLink className="w-4 h-4 mr-2" />
@@ -444,11 +464,13 @@ export default function PortfolioHomepage() {
           </div>
 
           <div className="text-center mt-12">
+            <Link href="/projects">
             <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0">
               View All Projects
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
-          </div>
+            </Link>
+          </div>          
         </div>
       </section>
 
