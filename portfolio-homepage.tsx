@@ -23,6 +23,9 @@ import {
   X,
 } from "lucide-react"
 import Link from "next/link"
+import { SkillsSection } from "./components/skills-section"
+import { EducationSection } from "./components/eduacation-section"
+import Header from "./components/header"
 
 export default function PortfolioHomepage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -141,89 +144,7 @@ export default function PortfolioHomepage() {
       </div>
 
       {/* Navigation */}
-      <nav className="relative z-50 p-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="backdrop-blur-md bg-white/10 rounded-2xl border border-white/20 px-6 py-4">
-            <div className="flex items-center justify-between">
-              <Link href={"/"}><div className="text-2xl font-bold text-white">Ashish Verma</div></Link>
-
-              {/* Desktop Menu */}
-              <div className="hidden md:flex items-center space-x-8">
-                <a href="#home" className="text-white/80 hover:text-white transition-colors">
-                  Home
-                </a>
-                <a href="#about" className="text-white/80 hover:text-white transition-colors">
-                  About
-                </a>
-                <a href="#services" className="text-white/80 hover:text-white transition-colors">
-                  Services
-                </a>
-                <a href="#projects" className="text-white/80 hover:text-white transition-colors">
-                  Projects
-                </a>
-                <a href="#contact" className="text-white/80 hover:text-white transition-colors">
-                  Contact
-                </a>
-                <a
-                href="/AshishUpdateResume.pdf"
-                download
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0">
-                  <Download className="w-4 h-4 mr-2" />
-                  Resume
-                </Button>
-                </a>
-              </div>
-
-              {/* Mobile Menu Button */}
-              <Button
-                variant="ghost"
-                size="icon"
-                className="md:hidden text-white"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-              >
-                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </Button>
-            </div>
-
-            {/* Mobile Menu */}
-            {isMenuOpen && (
-              <div className="md:hidden mt-4 pt-4 border-t border-white/20">
-                <div className="flex flex-col space-y-4">
-                  <a href="#home" className="text-white/80 hover:text-white transition-colors">
-                    Home
-                  </a>
-                  <a href="#about" className="text-white/80 hover:text-white transition-colors">
-                    About
-                  </a>
-                  <a href="#services" className="text-white/80 hover:text-white transition-colors">
-                    Services
-                  </a>
-                  <a href="#projects" className="text-white/80 hover:text-white transition-colors">
-                    Projects
-                  </a>
-                  <a href="#contact" className="text-white/80 hover:text-white transition-colors">
-                    Contact
-                  </a>
-                  <a
-                href="/AshishUpdateResume.pdf"
-                download
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                  <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0 w-full">
-                    <Download className="w-4 h-4 mr-2" />
-                    Resume
-                  </Button>
-                  </a>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </nav>
+        <Header />
 
       {/* Hero Section */}
       <section id="home" className="relative z-10 px-6 py-20">
@@ -237,7 +158,7 @@ export default function PortfolioHomepage() {
                     alt="Developer Avatar"
                     className="w-28 h-28 rounded-full object-cover"
                   />
-                </div>
+                </div>    
               </div>
             </div>
 
@@ -413,6 +334,12 @@ export default function PortfolioHomepage() {
         </div>
       </section>
 
+      <section id="skills" className="skills">
+        <div className="max-w-7xl mx-auto">
+          <SkillsSection />
+        </div>
+      </section>
+
       {/* Projects Section */}
       <section id="projects" className="relative z-10 px-6 py-20">
         <div className="max-w-7xl mx-auto">
@@ -483,6 +410,12 @@ export default function PortfolioHomepage() {
         </div>
       </section>
 
+      <section id="education" className="education">
+        <div className="max-w-7xl mx-auto">
+          <EducationSection />
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="relative z-10 px-6 py-20">
         <div className="max-w-4xl mx-auto">
@@ -505,7 +438,7 @@ export default function PortfolioHomepage() {
                       </div>
                       <div>
                         <p className="text-white font-medium">Email</p>
-                        <p className="text-white/70">ashishverma2047@gmail.com</p>
+                        <a href="mailto:ashishverma2047@gmail.com"><p className="text-white/70">ashishverma2047@gmail.com</p></a>
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
@@ -514,7 +447,7 @@ export default function PortfolioHomepage() {
                       </div>
                       <div>
                         <p className="text-white font-medium">Phone Number</p>
-                        <p className="text-white/70">+91 6398069235</p>
+                        <a href="tel:6398069235"><p className="text-white/70">+91 6398069235</p></a>
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
@@ -595,7 +528,7 @@ export default function PortfolioHomepage() {
     < footer className = "relative z-10 px-6 py-8 border-t border-white/20" >
       <div className="max-w-7xl mx-auto">
         <div className="text-center">
-          <p className="text-white/60">© 2024 Ashish Verma. All rights reserved. Built with React & Next.js</p>
+          <p className="text-white/60">© 2025 Ashish Verma. All rights reserved. Built with React & Next.js</p>
         </div>
       </div>
       </footer >
