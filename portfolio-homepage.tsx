@@ -118,6 +118,33 @@ export default function PortfolioHomepage() {
     },
   ]
 
+
+
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      message: formData.get("message"),
+    };
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    setLoading(false);
+    setSuccess(res.ok);
+    e.currentTarget.reset();
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 relative overflow-hidden">
       {/* Animated Background Elements */}
@@ -471,52 +498,50 @@ export default function PortfolioHomepage() {
                   </div>
                 </div>
 
-                <form
-                  action="https://formsubmit.co/ashishverma2047@gmail.com"  // Replace with your actual email
-                  method="POST"
-                  className="space-y-4"
-                >
-                  {/* Optional: Turn off CAPTCHA */}
-                  <input type="hidden" name="_captcha" value="false" />
+                <form onSubmit={handleSubmit} className="space-y-4">
+      <div>
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          required
+          className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <div>
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          required
+          className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <div>
+        <textarea
+          name="message"
+          rows={4}
+          placeholder="Your Message"
+          required
+          className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+        />
+      </div>
 
-                  {/* Optional: Redirect to a thank you page after form submission */}
-                  <input type="hidden" name="_next" value="https://your-portfolio.com/thanks" />
+      <Button
+        type="submit"
+        disabled={loading}
+        className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0 py-3"
+      >
+        {loading ? "Sending..." : "Send Message"}
+        <ArrowRight className="w-4 h-4 ml-2" />
+      </Button>
 
-                  <div>
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Your Name"
-                      required
-                      className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Your Email"
-                      required
-                      className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                  </div>
-                  <div>
-                    <textarea
-                      name="message"
-                      rows={4}
-                      placeholder="Your Message"
-                      required
-                      className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
-                    />
-                  </div>
-                  <Button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0 py-3"
-                  >
-                    Send Message
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
-                </form>
+      {success && (
+        <p className="text-green-400 text-sm mt-2">
+          ✅ Your message has been sent successfully!
+        </p>
+      )}
+    </form>
 
               </div>
           </CardContent>
