@@ -181,9 +181,9 @@ export default function PortfolioHomepage() {
               <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 p-1">
                 <div className="w-full h-full rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center">
                   <img
-                    src="/New_Ashish_pic.jpg?height=120&width=120"
+                    src="/Ashish_profile.jpg?height=120&width=120"
                     alt="Developer Avatar"
-                    className="w-28 h-28 rounded-full object-cover object-top"
+                    className="w-28 h-28 rounded-full object-cover"
                   />
                 </div>    
               </div>

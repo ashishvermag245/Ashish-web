@@ -16,7 +16,7 @@ export default function Header() {
             {/* Logo / Brand */}
             <Link href={"/"}>
               <div className="text-2xl font-bold text-white cursor-pointer">
-                Ashish Verma
+                Ashish Verma JI
               </div>
             </Link>
 
