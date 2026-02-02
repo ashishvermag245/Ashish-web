@@ -44,7 +44,7 @@ export default function Header() {
                 Contact
               </a>
               <a
-                href="/AshishUpdateResume.pdf"
+                href="/AshishVerma_January.pdf"
                 download
                 target="_blank"
                 rel="noopener noreferrer"

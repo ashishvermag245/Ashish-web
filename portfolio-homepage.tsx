@@ -70,6 +70,14 @@ export default function PortfolioHomepage() {
       live: "https://starfurniture.com/",
     },
     {
+      title: "Pick My Tutor",
+      description: "Pick-my-tutor is a free website, trusted by thousands of students and teachers, all over the world.You can find local tutors, online teachers, and teachers to help with tutoring, coaching, assignments ",
+      image: "/pickmytutor.png?height=200&width=300",
+      tech: ["Next.Js", "API Integration", "Tailwind CSS", "React Library", "Laravel"],
+      github: "https://github.com/ashishvermag245",
+      live: "https://pick-my-tutor.vercel.app/",
+    },
+    {
       title: "MetricWave Insights",
       description: "MetricWave Insights delivers data-driven market research and strategic business consulting to help companies grow, compete, and make informed decisions.",
       image: "/metricwave.webp?height=200&width=300",
@@ -171,7 +179,7 @@ export default function PortfolioHomepage() {
       </div>
 
       {/* Navigation */}
-        <Header />
+      <Header />
 
       {/* Hero Section */}
       <section id="home" className="relative z-10 px-6 py-20">
@@ -181,11 +189,11 @@ export default function PortfolioHomepage() {
               <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 p-1">
                 <div className="w-full h-full rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center">
                   <img
-                    src="/New_Ashish_pic.jpg?height=120&width=120"
+                    src="/Profile_photo.png?height=120&width=120"
                     alt="Developer Avatar"
                     className="w-28 h-28 rounded-full object-cover object-top"
                   />
-                </div>    
+                </div>
               </div>
             </div>
 
@@ -234,19 +242,19 @@ export default function PortfolioHomepage() {
             {/* Social Links */}
             <div className="flex justify-center space-x-6">
               <Link href="https://github.com/ashishvermag245">
-              <Button size="icon" variant="ghost" className="text-white hover:bg-white/10 rounded-full">
-                <Github className="w-6 h-6" />
-              </Button>
+                <Button size="icon" variant="ghost" className="text-white hover:bg-white/10 rounded-full">
+                  <Github className="w-6 h-6" />
+                </Button>
               </Link>
               <Link href="https://www.linkedin.com/in/ashish-verma-b79229249/">
-              <Button size="icon" variant="ghost" className="text-white hover:bg-white/10 rounded-full">
-                <Linkedin className="w-6 h-6" />
-              </Button>
+                <Button size="icon" variant="ghost" className="text-white hover:bg-white/10 rounded-full">
+                  <Linkedin className="w-6 h-6" />
+                </Button>
               </Link>
               <Link href="mailto:ashishverma2047@gmail.com">
-              <Button size="icon" variant="ghost" className="text-white hover:bg-white/10 rounded-full">
-                <Mail className="w-6 h-6" />
-              </Button>
+                <Button size="icon" variant="ghost" className="text-white hover:bg-white/10 rounded-full">
+                  <Mail className="w-6 h-6" />
+                </Button>
               </Link>
             </div>
           </div>
@@ -307,20 +315,20 @@ export default function PortfolioHomepage() {
                 </div>
               </div>
               <a
-                href="/AshishUpdateResume.pdf"
+                href="/AshishVerma_January.pdf"
                 download
                 target="_blank"
                 rel="noopener noreferrer"
               >
-              <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0">
-                Download Resume
-                <Download className="w-4 h-4 ml-2" />
-              </Button>
+                <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0">
+                  Download Resume
+                  <Download className="w-4 h-4 ml-2" />
+                </Button>
               </a>
             </div>
 
             <div className="relative">
-              <div className="backdrop-blur-md bg-white/10 rounded-3xl border border-white/20 p-8">
+              <div className="backdrop-blur-md bg-white/10 rounded-3xl border border-white/20 p-4">
                 <img
                   src="/about.webp?height=400&width=400"
                   alt="Developer Workspace"
@@ -361,7 +369,7 @@ export default function PortfolioHomepage() {
         </div>
       </section>
 
-      <section id="skills" className="skills">
+      <section id="skills" className="skills relative z-10 px-6 py-20">
         <div className="max-w-7xl mx-auto">
           <SkillsSection />
         </div>
@@ -377,8 +385,8 @@ export default function PortfolioHomepage() {
             </p>
           </div>
 
-<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.slice(0,3).map((project, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.slice(0, 3).map((project, index) => (
               <Card
                 key={index}
                 className="backdrop-blur-md bg-white/10 border-white/20 hover:bg-white/20 transition-all duration-300 group overflow-hidden"
@@ -428,12 +436,12 @@ export default function PortfolioHomepage() {
 
           <div className="text-center mt-12">
             <Link href="/projects">
-            <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0">
-              View All Projects
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
+              <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0">
+                View All Projects
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
             </Link>
-          </div>          
+          </div>
         </div>
       </section>
 
@@ -455,7 +463,7 @@ export default function PortfolioHomepage() {
 
           <Card className="backdrop-blur-md bg-white/10 border-white/20">
             <CardContent className="p-8">
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <h3 className="text-2xl font-semibold text-white mb-6">Get In Touch</h3>
                   <div className="space-y-4">
@@ -465,7 +473,9 @@ export default function PortfolioHomepage() {
                       </div>
                       <div>
                         <p className="text-white font-medium">Email</p>
-                        <a href="mailto:ashishverma2047@gmail.com"><p className="text-white/70">ashishverma2047@gmail.com</p></a>
+                        <a href="mailto:ashishverma2047@gmail.com" className="text-wrap">
+                          <p className="text-white/70 text-wrap">ashishverma2047@gmail.com</p>
+                        </a>
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
@@ -481,81 +491,81 @@ export default function PortfolioHomepage() {
                       <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
                         <Github className="w-6 h-6 text-white" />
                       </div>
-                      <div>
+                      <div className="">
                         <p className="text-white font-medium">GitHub</p>
-                        <p className="text-white/70">https://github.com/ashishvermag245</p>
+                        <p className="text-white/70 break-all text-sm">https://github.com/ashishvermag245</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
                         <Linkedin className="w-6 h-6 text-white" />
                       </div>
-                      <div>
+                      <div className="text-wrap">
                         <p className="text-white font-medium">LinkedIn</p>
-                        <p className="text-white/70">https://www.linkedin.com/in/ashish-verma-b79229249/</p>
+                        <p className="text-white/70 break-all text-sm">https://www.linkedin.com/in/ashish-verma-b79229249/</p>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
-      <div>
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          required
-          className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-      </div>
-      <div>
-        <input
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          required
-          className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-      </div>
-      <div>
-        <textarea
-          name="message"
-          rows={4}
-          placeholder="Your Message"
-          required
-          className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
-        />
-      </div>
+                  <div>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Your Name"
+                      required
+                      className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Your Email"
+                      required
+                      className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <textarea
+                      name="message"
+                      rows={4}
+                      placeholder="Your Message"
+                      required
+                      className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+                    />
+                  </div>
 
-      <Button
-        type="submit"
-        disabled={loading}
-        className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0 py-3"
-      >
-        {loading ? "Sending..." : "Send Message"}
-        <ArrowRight className="w-4 h-4 ml-2" />
-      </Button>
+                  <Button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0 py-3"
+                  >
+                    {loading ? "Sending..." : "Send Message"}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
 
-      {success && (
-        <p className="text-green-400 text-sm mt-2">
-          ✅ Your message has been sent successfully!
-        </p>
-      )}
-    </form>
+                  {success && (
+                    <p className="text-green-400 text-sm mt-2">
+                      ✅ Your message has been sent successfully!
+                    </p>
+                  )}
+                </form>
 
               </div>
-          </CardContent>
-        </Card>
-    </div>
+            </CardContent>
+          </Card>
+        </div>
       </section >
 
-    {/* Footer */ }
-    < footer className = "relative z-10 px-6 py-8 border-t border-white/20" >
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center">
-          <p className="text-white/60">© 2025 Ashish Verma. All rights reserved. Built with React & Next.js</p>
+      {/* Footer */}
+      < footer className="relative z-10 px-6 py-8 border-t border-white/20" >
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center">
+            <p className="text-white/60">© 2025 Ashish Verma. All rights reserved. Built with React & Next.js</p>
+          </div>
         </div>
-      </div>
       </footer >
     </div >
   )
